@@ -40,6 +40,10 @@ function App() {
       setSuggestions(filtered);
     }
   };
+  const handleClick = (item) => {
+    setInput(item);
+    setSuggestions([item]);
+  };
 
   return (
     <div style={{ padding: "20px", maxWidth: "400px" }}>
@@ -56,6 +60,7 @@ function App() {
           <li
             key={index}
             style={{ padding: "5px 0", borderBottom: "1px solid #eee" }}
+            onClick={() => handleClick(item)}
           >
             {item}
           </li>
